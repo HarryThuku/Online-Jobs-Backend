@@ -1,0 +1,10 @@
+
+body{
+    background-image:url(app/static/css/damn.jpg);
+}
+ul{
+    font-family: 'Roboto Mono', monospace;
+}
+.container{
+    font-family: 'Indie Flower', cursive;
+}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Josefin+Sans|Roboto+Mono|Shadows+Into+Light&display=swap" rel="stylesheet">
+
+<!-- Styles block -->
+<body>
+
+
+{% block styles%}
+    {{ super() }}
+   
+{% endblock %}
+
+{% block content %}
+{% if current_user.is_authenticated %}
+<a href="/user/{{current_user.username}}/pitch" class="btn btn-success">+ pitch</a>
+
+{% endif %}
+<div class="main " style="background-image:url(https://images.unsplash.com/photo-1556634862-107d22db86eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)" >
+    <div class="container">
+        <h1 style="text-align: center" class="title">Pitcher</h1>
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                Requirements to post a pitch
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><h4>Sign up and login to access content</h4></li>
+                <li class="list-group-item"><h4>Receive a welcoming email once you sign up</h4></li>
+                <li class="list-group-item"><h4>Post a pitch for you or for someone to comment</h4></li>
+                <li class="list-group-item"><h4>Comment on a pitch</h4></li>
+                <li class="list-group-item"><h4>Vote a pitch </h4></li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+<hr>
+<br>
+<br>
+{% endblock %}   
+</body>
